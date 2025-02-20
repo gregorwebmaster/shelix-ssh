@@ -1,0 +1,16 @@
+# Version control
+.git
+.gitignore
+
+# Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Shared directory (since it's mounted as a volume)
+shared/
+
+# Common development files
+*.log
+*.md
+.DS_Store

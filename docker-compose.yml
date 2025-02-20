@@ -1,0 +1,16 @@
+version: '3'
+services:
+  ssh-server:
+    container_name: shared_ssh
+    build:
+      context: .
+      args:
+        - SSH_USER=${SSH_USER}
+        - SSH_PASSWORD=${SSH_PASSWORD}
+    ports:
+      - "62345:71028"
+    volumes:
+      - ${SHARED_DIR}:/shared
+    env_file:
+      - .env
+    restart: unless-stopped
