@@ -7,8 +7,9 @@ services:
       args:
         - SSH_USER=${SSH_USER}
         - SSH_PASSWORD=${SSH_PASSWORD}
+        - SSH_PORT=${SSH_PORT}
     ports:
-      - "62345:71028"
+      - "${HOST_PORT}:${SSH_PORT}"
     volumes:
       - ${SHARED_DIR}:/shared
     env_file:
